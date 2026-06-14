@@ -1,0 +1,74 @@
+main {
+    min-height: 100vh;
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+   .form-container {
+    min-width: 420px;
+    padding: 2.5rem;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    // ultra transparent glass
+    background: rgba(255, 255, 255, 0.03);
+
+    backdrop-filter: blur(35px) saturate(180%);
+    -webkit-backdrop-filter: blur(35px) saturate(180%);
+
+    border-radius: 1.5rem;
+
+    border-top: 1px solid rgba(255,255,255,0.5);
+    border-left: 1px solid rgba(255,255,255,0.35);
+    border-right: 1px solid rgba(255,255,255,0.08);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+
+    box-shadow:
+        0 25px 45px rgba(0,0,0,0.45),
+        inset 0 0 40px rgba(255,255,255,0.08);
+}
+
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+
+
+    .input-group {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+
+        label {
+            font-weight: 500;
+        }
+input {
+    border: 1px solid rgba(255,255,255,0.15);
+    outline: none;
+
+    padding-inline: 1rem;
+    padding-block: 0.85rem;
+
+    border-radius: 0.75rem;
+
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(20px);
+
+    color: white;
+
+    &::placeholder {
+        color: rgba(255,255,255,0.55);
+    }
+}
+    }
+
+    a {
+        color: #c40980;
+        text-decoration: none;
+    }
+}

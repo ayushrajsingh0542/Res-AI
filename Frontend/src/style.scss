@@ -1,0 +1,28 @@
+@use "./styles/button.scss";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body, #root {
+    width: 100%;
+    min-height: 100vh;
+    height: 100%;
+
+    font-family: 'Poppins', sans-serif;
+    color: whitesmoke;
+}
+
+body {
+    background-image: url("./assets/bg1.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.highlight {
+    color: #d20d3b;
+}
