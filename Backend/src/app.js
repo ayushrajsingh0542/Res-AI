@@ -10,10 +10,22 @@ const app = express();
 
 app.use(express.json());
 app.use(cookieParser())
-app.use(cors({ 
-    origin:process.env.FRONTEND_URL,
+const allowedOrigins = [
+    "https://res-ai-kappa.vercel.app",
+    "https://res-3vf0gcyv9-ayushrajsingh0542s-projects.vercel.app"
+];
+
+app.use(cors({
+    origin: function(origin, callback){
+        if(!origin || allowedOrigins.includes(origin)){
+            callback(null,true);
+        }
+        else{
+            callback(new Error("Not allowed by CORS"));
+        }
+    },
     credentials:true
-})) 
+}));
 
 // using all the routes here
 app.use("/api/auth",authRouter)
