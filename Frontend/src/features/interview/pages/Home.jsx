@@ -253,7 +253,7 @@ const Home = () => {
             </svg>
             Generate My Interview Strategy
           </button>
-          <button className="generate-btn onClick={handleLogout}>
+          <button className="generate-btn" onClick={handleLogout}>
   Logout
 </button>
         </div>
