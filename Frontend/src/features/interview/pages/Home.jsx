@@ -2,6 +2,7 @@ import { useState, useRef } from "react";
 import "../style/home.scss";
 import { useInterview } from "../hooks/useInterview";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const Home = () => {
   const { loading, generateReport, reports } = useInterview();
@@ -21,6 +22,26 @@ const Home = () => {
     });
     navigate(`/interview/${data._id}`);
   };
+
+  const handleLogout = async () => {
+  try {
+    await axios.post(
+      `${import.meta.env.VITE_API_URL}/api/auth/logout`,
+      {},
+      {
+        withCredentials: true,
+      }
+    );
+
+    localStorage.removeItem("user");
+    localStorage.removeItem("token");
+
+    navigate("/login");
+
+  } catch (error) {
+    console.log(error);
+  }
+};
 
   if (loading) {
     return (
@@ -232,6 +253,9 @@ const Home = () => {
             </svg>
             Generate My Interview Strategy
           </button>
+          <button className="generate-btn onClick={handleLogout}>
+  Logout
+</button>
         </div>
       </div>
 
