@@ -15,6 +15,8 @@ const allowedOrigins = [
     "https://res-3vf0gcyv9-ayushrajsingh0542s-projects.vercel.app"
 ];
 
+app.set("trust proxy", 1);
+
 app.use(cors({
     origin: function(origin, callback){
         if(!origin || allowedOrigins.includes(origin)){
